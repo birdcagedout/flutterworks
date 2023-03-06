@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: SafeAreaApp(),
+    home: StackApp(),
   ));
 }
 
@@ -260,6 +260,171 @@ class SafeAreaApp extends StatelessWidget {
         color: Colors.blue,
         width: 0,
         height: 0,
+      ),
+    );
+  }
+}
+
+
+// p.140 Row 위젯
+class RowApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SizedBox(
+        height: double.infinity,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+
+          children: [
+            Container(
+              width: 50.0,
+              height: 50.0,
+              color: Colors.red,
+            ),
+
+            const SizedBox(
+              width: 12.0,
+            ),
+            Container(
+              width: 50.0,
+              height: 50.0,
+              color: Colors.green,
+            ),
+            const SizedBox(
+              width: 12.0,
+            ),
+            Container(
+              width: 50.0,
+              height: 50.0,
+              color: Colors.blue,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+// p.144 Column 위젯
+class ColumnApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SizedBox(
+        width: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            // 원하는 위젯
+            Container(
+              width: 50,
+              height: 50,
+              color: Colors.red,
+            ),
+            // SizedBox는 공백으로 사용
+            // SizedBox(width: 12,),
+            Container(
+              width: 50,
+              height: 50,
+              color: Colors.green,
+            ),
+            // const SizedBox(width: 12,),
+            Container(
+              width: 50,
+              height: 50,
+              color: Colors.blue,
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+// p.147 Flexible 위젯
+class FlexibleApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Flexible(
+          flex: 2,    // 2/(2+4) = 33%
+          child: Container(
+            color: Colors.blue,
+          ),
+        ),
+        Flexible(
+          flex: 4,    // 4/(2+4) = 66%
+          child: Container(
+            color: Colors.red,
+          )
+        )
+      ],
+    );
+  }
+}
+
+
+// p.148 Expanded 위젯
+class ExpandedApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Expanded(
+          child: Container(
+            color: Colors.blue,
+          ),
+        ),
+        Expanded(
+          child: Container(
+            color: Colors.red,
+          ),
+        ),
+        Flexible(
+          flex: 2,
+          child: Container(
+            color: Colors.green,
+          ),
+        )
+      ],
+    );
+  }
+}
+
+// p.149 Stack 위젯
+class StackApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext contex) {
+    return SafeArea(
+      child: Stack(
+        children: [
+          // 첫번째(최외곽)
+          Container(
+            width: 300,
+            height: 300,
+            color: Colors.red,
+          ),
+
+          // 두번쩨(중간)
+          Container(
+            width: 250,
+            height: 250,
+            color: Colors.yellow,
+          ),
+
+          // 세번째(최내부)
+          Container(
+            width: 200,
+            height: 200,
+            color: Colors.green,
+          )
+        ],
       ),
     );
   }
