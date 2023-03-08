@@ -400,7 +400,7 @@ class ExpandedApp extends StatelessWidget {
 // p.149 Stack 위젯
 class StackApp extends StatelessWidget {
   @override
-  Widget build(BuildContext contex) {
+  Widget build(BuildContext context) {
     return SafeArea(
       child: Stack(
         children: [
@@ -413,6 +413,7 @@ class StackApp extends StatelessWidget {
 
           // 두번쩨(중간)
           Container(
+            margin: EdgeInsets.all(25),
             width: 250,
             height: 250,
             color: Colors.yellow,
@@ -420,6 +421,7 @@ class StackApp extends StatelessWidget {
 
           // 세번째(최내부)
           Container(
+            margin: EdgeInsets.all(50),
             width: 200,
             height: 200,
             color: Colors.green,
