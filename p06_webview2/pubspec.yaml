@@ -44,11 +44,6 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-
-  # pub.dev에서 webview로 검색하면 flutter.dev가 제작한 plug-in이 나옴
-  # 이름을 클릭한 후 다시 이름 근처에서 copy 누르면 아랫줄의 내용이 복사된다.
-  webview_flutter: ^4.0.6
-
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your

@@ -12,12 +12,21 @@ class SplashScreenApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Color(0xFFF99231),
-        body: Column(
+        // backgroundColor: Color(0xFFF99231),
+        backgroundColor: Color(0xFF000000),
+        body: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('asset/img/logo.png'),
-            CircularProgressIndicator(color: Colors.white),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  'asset/img/logo.png',
+                  width: 200,
+                ),
+                CircularProgressIndicator(color: Colors.white),
+              ],
+            ),
           ],
         ),
       ),
