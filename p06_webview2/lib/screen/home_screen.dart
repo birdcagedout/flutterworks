@@ -3,16 +3,18 @@ import 'package:webview_flutter/webview_flutter.dart';
 
 
 
+// 1. 홈으로 사용할 Uri를 만든다.
+final homeURI = Uri.parse('http://birdcagedout.com');
+
+
+
 class HomeScreen extends StatelessWidget {
-
-  // 1. 홈으로 사용할 Uri를 만든다.
-  final homeURI = Uri.parse('https://birdcagedout.com');
-
+  
   // 2. controller를 만든다 + javascript 설정 / home 접속
   WebViewController controller = WebViewController()
   ..setJavaScriptMode(JavaScriptMode.unrestricted)
-  // ..loadRequest(homeURI);
-  ..loadRequest(Uri.parse('http://birdcagedout.com®'));
+  ..loadRequest(homeURI);
+  // ..loadRequest(Uri.parse('http://birdcagedout.com'));
 
   HomeScreen({Key? key})
       : super(key: key); // controller를 나중에 생성할 것이므로 final이 아니므로 const 생성자를 쓰면 안 된다
